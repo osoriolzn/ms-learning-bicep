@@ -35,7 +35,7 @@ var subnetProperties = [for subnet in subnets: {
   }
 }]
 
-module databases 'modules/database.bicep' = [for location in locations: {
+module databases 'modules/server.database.bicep' = [for location in locations: {
   name: 'database-${location}'
   params: {
     location: location

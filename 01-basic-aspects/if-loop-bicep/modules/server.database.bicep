@@ -52,7 +52,7 @@ resource auditStorageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = if
   sku: {
     name: auditStorageAccountSkuName
   }
-  kind: 'StorageV2'  
+  kind: 'StorageV2'
 }
 
 resource sqlServerAudit 'Microsoft.Sql/servers/auditingSettings@2021-11-01-preview' = if (auditingEnabled) {
@@ -61,7 +61,7 @@ resource sqlServerAudit 'Microsoft.Sql/servers/auditingSettings@2021-11-01-previ
   properties: {
     state: 'Enabled'
     storageEndpoint: environmentName == 'Production' ? auditStorageAccount.properties.primaryEndpoints.blob : ''
-    storageAccountAccessKey: environmentName == 'Production' ? listKeys(auditStorageAccount.id, auditStorageAccount.apiVersion).keys[0].value : ''
+    storageAccountAccessKey: environmentName == 'Production' ? auditStorageAccount.listKeys().keys[0].value : ''
   }
 }
 
