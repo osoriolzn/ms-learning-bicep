@@ -13,7 +13,8 @@ Validar la plantilla Bicep
 ```bicep
 bicep build main.bicep
 ```
-***Nota:** Al ejecutar el comando `build`, Bicep también transpila el código de Bicep en una plantilla de ARM JSON. Por lo general, no necesita el archivo que genera, por lo que puede omitirlo.*
+> [!NOTE]
+> Al ejecutar el comando `build`, Bicep también transpila el código de Bicep en una plantilla de ARM JSON. Por lo general, no necesita el archivo que genera, por lo que puede omitirlo.
 
 ## Nombrar recursos
 Documentación 👉 [Definición de convención de nomenclatura](https://learn.microsoft.com/es-es/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
